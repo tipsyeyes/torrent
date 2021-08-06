@@ -244,8 +244,12 @@ func mainErr() error {
 	//case :
 	//	return announceErr(flags.Args, parser)
 	case flags.DownloadCmd != nil:
+		// bt下载
+		// torrent download 'magnet:?xt=urn:btih:KRWPCX3SJUM4IMM4YF5RPHL6ANPYTQPU'
 		return downloadErr()
 	case flags.ListFilesCmd != nil:
+		// 种子文件分析，列出文件名
+		// torrent list-files /Users/elias/sre/deploy/github.com/demo/go/src/regal/test/torrents/ax.torrent
 		mi, err := metainfo.LoadFromFile(flags.ListFilesCmd.TorrentPath)
 		if err != nil {
 			return fmt.Errorf("loading from file %q: %v", flags.ListFilesCmd.TorrentPath, err)
@@ -259,6 +263,8 @@ func mainErr() error {
 		}
 		return nil
 	case flags.SpewBencodingCmd != nil:
+		// bencode解码
+		// torrent spew-bencoding < /Users/elias/sre/deploy/github.com/demo/go/src/regal/test/torrents/ax.torrent
 		d := bencode.NewDecoder(os.Stdin)
 		for i := 0; ; i++ {
 			var v interface{}
