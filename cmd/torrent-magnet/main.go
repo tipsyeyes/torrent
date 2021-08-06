@@ -11,7 +11,8 @@ import (
 
 func main() {
 	tagflag.Parse(nil, tagflag.Description("reads a torrent file from stdin and writes out its magnet link to stdout"))
-
+	// 创建种子磁力链接
+	// torrent-magnet < /Users/elias/sre/deploy/github.com/demo/go/src/regal/test/ax.torrent
 	mi, err := metainfo.Load(os.Stdin)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error reading metainfo from stdin: %s", err)

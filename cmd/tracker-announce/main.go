@@ -50,6 +50,9 @@ func main() {
 		Port: 50007,
 	}
 	tagflag.Parse(&flags)
+	// 根据种子文件等信息，向 tracker发起请求
+	// tracker-announce /Users/elias/sre/deploy/github.com/demo/go/src/regal/test/torrents/ax.torrent
+
 	var exitCode int32
 	var wg sync.WaitGroup
 	startAnnounce := func(ih torrent.InfoHash, tURI string) {

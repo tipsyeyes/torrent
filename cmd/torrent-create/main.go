@@ -29,6 +29,8 @@ func main() {
 		Root string
 	}
 	tagflag.Parse(&args, tagflag.Description("Creates a torrent metainfo for the file system rooted at ROOT, and outputs it to stdout."))
+	// 创建种子文件
+	// torrent-create *.iso
 	mi := metainfo.MetaInfo{
 		AnnounceList: builtinAnnounceList,
 	}

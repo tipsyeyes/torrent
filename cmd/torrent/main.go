@@ -246,6 +246,7 @@ func mainErr() error {
 	case flags.DownloadCmd != nil:
 		// bt下载
 		// torrent download 'magnet:?xt=urn:btih:KRWPCX3SJUM4IMM4YF5RPHL6ANPYTQPU'
+		// torrent download /Users/elias/sre/deploy/github.com/demo/go/src/regal/test/torrents/ax.torrent
 		return downloadErr()
 	case flags.ListFilesCmd != nil:
 		// 种子文件分析，列出文件名
